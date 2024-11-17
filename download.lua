@@ -1,4 +1,4 @@
-function AsketLoad(product)
+function AsketLoad(product1)
   createTimer(1,function()
     if not cheatEngineIs64Bit() then print('Asket supports only x64 CE') return end
     if getCEVersion() < 7.5 then print('Asket supports only version >= 7.5 CE') return end
@@ -18,7 +18,7 @@ function AsketLoad(product)
         print('❓ Updating api')
       else
         asket = require('asket64')
-        product = product
+        product = product1
         asket.dec(getInternet().getURL('https://raw.githubusercontent.com/expika/asket/refs/heads/main/main.lua'):gsub('\n',''))
         return
       end
