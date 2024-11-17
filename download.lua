@@ -19,7 +19,6 @@ function AsketLoad(product1)
       else
         asket = require('asket64')
         product = product1
-        if not product then print(1) end
         asket.dec(getInternet().getURL('https://raw.githubusercontent.com/expika/asket/refs/heads/main/main.lua'):gsub('\n',''))
         return
       end
