@@ -1,7 +1,7 @@
 function AsketLoad(product1)
   createTimer(1,function()
-    if not cheatEngineIs64Bit() then print('❓  Asket supports only x64 CE') return end
-    if getCEVersion() < 7.5 then print('❓  Asket supports only version >= 7.5 CE') return end
+    if not cheatEngineIs64Bit() then print('❓ Asket supports only x64 CE') return end
+    if getCEVersion() < 7.5 then print('❓ Asket supports only version >= 7.5 CE') return end
 
     local cepath = getCheatEngineDir():gsub('\\','\\\\')
     local appdata = os.getenv('APPDATA'):gsub('\\','\\\\')
@@ -9,7 +9,7 @@ function AsketLoad(product1)
     local f,s = io.open(cepath..'\\asket64.dll','r')
 
     if not f then
-      print('❓  Downloading api')
+      print('❓ Downloading api')
     else
       s = f:seek('end')
       f:close()
@@ -30,9 +30,9 @@ function AsketLoad(product1)
     t = createTimer()
     t.Interval = 100
     t.OnTimer = function()
-      f = io.open(cepath..'\\asket64.dll','r')
+      fi = io.open(cepath..'\\asket64.dll','r')
       s = f:seek('end')
-      f:close()
+      fi:close()
       if s == size then t.destroy() print('✔ Done') asket = require('asket64') end
     end
   end)
