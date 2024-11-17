@@ -31,7 +31,7 @@ function AsketLoad(product1)
     t.Interval = 100
     t.OnTimer = function()
       fi = io.open(cepath..'\\asket64.dll','r')
-      s = f:seek('end')
+      s = fi:seek('end')
       fi:close()
       if s == size then t.destroy() print('✔ Done') asket = require('asket64') end
     end
