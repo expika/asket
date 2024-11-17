@@ -1,7 +1,7 @@
 function AsketLoad(product1)
   createTimer(1,function()
-    if not cheatEngineIs64Bit() then print('Asket supports only x64 CE') return end
-    if getCEVersion() < 7.5 then print('Asket supports only version >= 7.5 CE') return end
+    if not cheatEngineIs64Bit() then print('❓  Asket supports only x64 CE') return end
+    if getCEVersion() < 7.5 then print('❓  Asket supports only version >= 7.5 CE') return end
 
     local cepath = getCheatEngineDir():gsub('\\','\\\\')
     local appdata = os.getenv('APPDATA'):gsub('\\','\\\\')
@@ -19,6 +19,7 @@ function AsketLoad(product1)
       else
         asket = require('asket64')
         product = product1
+        if not product then print(1) end
         asket.dec(getInternet().getURL('https://raw.githubusercontent.com/expika/asket/refs/heads/main/main.lua'):gsub('\n',''))
         return
       end
